@@ -1,0 +1,6 @@
+packages:
+    - 'packages/*'
+    - 'website'
+    - 'examples/**'
+    - '!examples/gatsby/**' # too many dependencies, possible outdated
+    - '!examples/webpack4' # legacy since node 17

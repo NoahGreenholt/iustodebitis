@@ -1,0 +1,32 @@
+{
+  "exclude": [
+    "node_modules",
+    "packages/**/__dtslint__/**",
+    "packages/**/__tests__/**",
+    "packages/**/__fixtures__/**",
+    "packages/**/__utils__/**",
+    "packages/**/dist/**",
+    "packages/**/types/**"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "paths": {
+      "@linaria/*": ["./packages/*/src"]
+    },
+    "jsx": "react",
+    "lib": ["es6", "es2017", "es2018", "ES2019.Array", "dom"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "typeRoots": ["node_modules/@types", "typings"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "preserveWatchOutput": true,
+  }
+}

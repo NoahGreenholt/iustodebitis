@@ -1,0 +1,42 @@
+{
+  "name": "@linaria/babel-plugin-interop",
+  "version": "4.5.0",
+  "homepage": "https://github.com/callstack/linaria/tree/master/packages/interop#readme",
+  "repository": "git@github.com:callstack/linaria.git",
+  "license": "MIT",
+  "author": {
+    "name": "Anton Evzhakov",
+    "email": "anton@evz.name"
+  },
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "types",
+  "files": [
+    "types/",
+    "lib/",
+    "esm/"
+  ],
+  "scripts": {
+    "build": "pnpm build:lib && pnpm build:esm && pnpm build:declarations",
+    "build:declarations": "tsc --emitDeclarationOnly --outDir types",
+    "build:esm": "babel src --out-dir esm --extensions '.js,.jsx,.ts,.tsx' --source-maps --delete-dir-on-start",
+    "build:lib": "cross-env NODE_ENV=legacy babel src --out-dir lib --extensions '.js,.jsx,.ts,.tsx' --source-maps --delete-dir-on-start",
+    "test": "jest --config ../../jest.config.js --rootDir .",
+    "typecheck": "tsc --noEmit --composite false",
+    "watch": "pnpm build:lib --watch & pnpm build:esm --watch & pnpm build:declarations --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/traverse": "^7.20.1",
+    "@babel/types": "^7.20.2",
+    "@types/babel__core": "^7.1.19",
+    "@types/babel__traverse": "^7.17.1",
+    "dedent": "^0.7.0"
+  },
+  "engines": {
+    "node": "^12.16.0 || >=13.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "webpack5-example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "linaria-website": "workspace:^4.1.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@linaria/webpack5-loader": "workspace:^4.1.8",
+    "babel-loader": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "css-hot-loader": "^1.4.4",
+    "css-loader": "^6.7.2",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.7.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "preview": "pnpm build && pnpm dlx http-server ."
+  },
+  "author": "Anton Evzhakov"
+}
